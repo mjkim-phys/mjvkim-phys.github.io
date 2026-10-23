@@ -1,5 +1,4 @@
 ---
-layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
@@ -7,58 +6,43 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+<a class="btn" href="/files/Minjae_Kim_CV.pdf">Download CV (PDF)</a>
 
 Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+------
+* **Ph.D., Physics**, University of Pennsylvania, Aug 2026 – present  
+  Advisor: Prof. Jonathan J. Heckman
+* **B.Sc., Physics and Mathematics**, Johns Hopkins University, Sep 2020 – May 2025  
+  Minor: Visual Arts
+* Sejong Science High School, Seoul, Republic of Korea, Feb 2017 – Feb 2020
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+Publications and preprints
+------
+See [Publications](/publications/).
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+Presentations
+------
+See [Talks](/talks/).
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+Awards
+------
+* NSF GRFP Honorable Mention, 2025
+* SOAR Summer Plunge Scholarship, JHU, 2024
+* William Lowell Putnam Award, JHU Department of Mathematics, 2024
+* Society of Physics Students Distinguished Chapter Award, 2022 – 2023
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
 Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+------
+See [Teaching](/teaching/).
+
+Outreach and service
+------
+* Volunteer, Science After Hours, The Franklin Institute, 2026
+* Volunteer, Annual Physics Fair, Dept. of Physics and Astronomy, University of Pennsylvania, 2025
+* Volunteer, Peer Mentoring and Academic Support, Dept. of Physics and Astronomy, JHU, 2021 – 2025
+* Volunteer, Telescope Maintenance for Public Observing, Maryland Space Grant Observatory, JHU, 2022 – 2023
+
+Skills
+------
+* Languages: Korean (native), English (fluent)
+* Software: C, C++, Mathematica, Python, LaTeX, MPI, shell scripting, GNU/Linux, Windows

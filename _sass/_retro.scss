@@ -1,0 +1,158 @@
+/* ==========================================================================
+   RETRO OVERRIDES
+   Plain old-HTML look: black on white, Times, blue/purple underlined links,
+   gray bevelled buttons, no icons, no shadows. Loaded last in main.scss.
+   ========================================================================== */
+
+/* One palette for both light and (system-triggered) dark mode */
+:root,
+html[data-theme="dark"] {
+  --global-base-color                 : #000;
+  --global-bg-color                   : #fff;
+  --global-footer-bg-color            : #fff;
+  --global-border-color               : #808080;
+  --global-dark-border-color          : #808080;
+  --global-code-background-color      : #fff;
+  --global-code-text-color            : #000;
+  --global-fig-caption-color          : #000;
+  --global-link-color                 : #0000ee;
+  --global-link-color-hover           : #ee0000;
+  --global-link-color-visited         : #551a8b;
+  --global-masthead-link-color        : #0000ee;
+  --global-masthead-link-color-hover  : #ee0000;
+  --global-text-color                 : #000;
+  --global-text-color-light           : #000;
+  --global-thead-color                : #fff;
+}
+
+html { color-scheme: light; }
+
+body {
+  background: #fff;
+  color: #000;
+}
+
+/* Links: classic browser defaults */
+a,
+a:visited {
+  text-decoration: underline;
+}
+a { color: #0000ee; }
+a:visited { color: #551a8b; }
+a:hover,
+a:focus { color: #ee0000; }
+
+/* Headings: plain, black, with a rule under page titles */
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title {
+  color: #000;
+  font-weight: bold;
+}
+.page__title {
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.2em;
+}
+.archive__subtitle,
+.page__content h2 {
+  border-bottom: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #808080;
+}
+
+/* No icons anywhere */
+.fa, .fas, .fab, .far, .fa-solid, .fa-brands, .ai {
+  display: none !important;
+}
+
+/* Top navigation: a single row of plain text links */
+.masthead {
+  border-bottom: 1px solid #000;
+  background: #fff;
+}
+.masthead__menu-item a,
+.greedy-nav a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+.masthead__menu-item--lg a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+.greedy-nav .visible-links a:before {
+  display: none;            /* remove the animated underline bar */
+}
+.greedy-nav {
+  background: #fff;
+}
+.greedy-nav button {
+  background: #c0c0c0;
+  border: 2px outset #fff;
+}
+
+/* Sidebar */
+.author__name { color: #000; }
+.author__bio,
+.author__urls,
+.author__urls a,
+.author__urls li {
+  color: #000;
+}
+.author__urls a { color: #0000ee; text-decoration: underline; }
+.author__urls.social-icons {
+  border: none;
+  box-shadow: none;
+  background: #fff;
+  padding-left: 0;
+}
+
+/* Buttons: Windows-95 style */
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  font-family: "Times New Roman", Times, serif;
+  color: #000 !important;
+  background: #c0c0c0 !important;
+  border: 2px outset #fff !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+.btn:active,
+button:active {
+  border-style: inset !important;
+}
+
+/* Footer */
+.page__footer {
+  background: #fff;
+  border-top: 1px solid #000;
+  color: #000;
+}
+.page__footer footer { color: #000; }
+.page__footer a { color: #0000ee; text-decoration: underline; }
+.page__footer-follow { display: none; }   /* GitHub is already in the sidebar */
+
+/* Mobile menu button: black bars, not link-blue */
+.navicon,
+.navicon:before,
+.navicon:after {
+  background: #000 !important;
+}
+
+/* Tables: visible cell borders, like <table border="1"> */
+table, th, td {
+  border: 1px solid #808080;
+}
+thead { background: #fff; }
+
+/* Notes list on the notes page */
+.retro-list li {
+  margin-bottom: 0.6em;
+}
+.small { font-size: 0.85em; }
