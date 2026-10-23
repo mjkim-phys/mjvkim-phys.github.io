@@ -1,0 +1,70 @@
+# Build the site from this (private) source repo and publish only the
+# generated HTML to the public repo mjkim-phys/mjkim-phys.github.io.
+#
+# One-time setup: add a repository secret named DEPLOY_TOKEN containing a
+# fine-grained personal access token with "Contents: Read and write" access
+# to mjkim-phys/mjkim-phys.github.io only.
+
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  PUBLIC_REPO: mjkim-phys/mjkim-phys.github.io
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deploy token
+        id: token
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$DEPLOY_TOKEN" ]; then
+            echo "::warning::DEPLOY_TOKEN secret is not set; skipping deploy."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.token.outputs.ok == 'true'
+
+      - uses: ruby/setup-ruby@v1
+        if: steps.token.outputs.ok == 'true'
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        if: steps.token.outputs.ok == 'true'
+        env:
+          JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec jekyll build
+
+      - name: Publish to public repo
+        if: steps.token.outputs.ok == 'true'
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          cd _site
+          touch .nojekyll   # already built; stop GitHub Pages from running Jekyll again
+          git init -q -b main
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Deploy site"
+          # Force-push a single commit so the public repo never carries source history.
+          git push -q --force "https://x-access-token:${DEPLOY_TOKEN}@github.com/${PUBLIC_REPO}.git" main
