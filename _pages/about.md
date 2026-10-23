@@ -11,7 +11,7 @@ I am a Ph.D. student in the [Department of Physics and Astronomy](https://www.ph
 
 Research
 ------
-My research interests are in generalized symmetries and quantum gravity.
+My research interests are in generalized symmetries and quantum gravity. Previously, I worked on accretion disks around black holes and black hole binary systems.
 
 Contact
 ------
