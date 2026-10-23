@@ -10,8 +10,7 @@ redirect_from:
 
 Education
 ------
-* **Ph.D., Physics**, University of Pennsylvania, Aug 2026 – present  
-  Advisor: Prof. Jonathan J. Heckman
+* **Ph.D., Physics**, University of Pennsylvania, Aug 2026 – present
 * **B.Sc., Physics and Mathematics**, Johns Hopkins University, Sep 2020 – May 2025  
   Minor: Visual Arts
 * Sejong Science High School, Seoul, Republic of Korea, Feb 2017 – Feb 2020
